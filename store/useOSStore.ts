@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-export type AppId = 'profile' | 'projects' | 'experience' | 'skills' | 'contact' | 'internet';
+export type AppId = 'profile' | 'projects' | 'experience' | 'skills' | 'contact' | 'internet' | 'recycle';
 
 interface WindowState {
     isOpen: boolean;
@@ -31,6 +31,7 @@ export const useOSStore = create<OSState>((set) => ({
         skills: { isOpen: false, isMinimized: false, zIndex: 0 },
         contact: { isOpen: false, isMinimized: false, zIndex: 0 },
         internet: { isOpen: false, isMinimized: false, zIndex: 0 },
+        recycle: { isOpen: false, isMinimized: false, zIndex: 0 },
     },
     activeWindow: 'profile',
     maxZIndex: 1,

@@ -4,21 +4,23 @@ import { useOSStore, AppId } from '@/store/useOSStore';
 import WindowFrame from './WindowFrame';
 import Taskbar from './Taskbar';
 import { User, Briefcase, Code2, Mail, Globe, Award } from 'lucide-react';
-import Hero from '../Hero';
+import NotepadProfile from '../apps/NotepadProfile';
+import ExplorerProjects from '../apps/ExplorerProjects';
 import Experience from '../Experience';
 import TechStack from '../TechStack';
-import FeaturedProjects from '../FeaturedProjects';
 import Contact from '../Contact';
 import Certifications from '../Certifications';
 
 // Application Definitions
+// Application Definitions
 const APPS = [
-    { id: 'profile', title: 'My Profile', icon: <User className="text-[#2B60DE]" />, component: <Hero /> },
-    { id: 'experience', title: 'Experience', icon: <Briefcase className="text-[#E68A00]" />, component: <Experience /> },
-    { id: 'projects', title: 'My Projects', icon: <Code2 className="text-[#339933]" />, component: <FeaturedProjects /> },
-    { id: 'skills', title: 'Tech Stack', icon: <Award className="text-[#A000A0]" />, component: <TechStack /> },
-    { id: 'internet', title: 'Internet', icon: <Globe className="text-[#0099CC]" />, component: <div className="p-4">External Links...</div> },
-    { id: 'contact', title: 'Contact Me', icon: <Mail className="text-[#CC3300]" />, component: <Contact /> },
+    { id: 'profile', title: 'My Profile', icon: <img src="/icons/computer.png" alt="My Computer" className="w-8 h-8 drop-shadow-md" />, component: <NotepadProfile /> },
+    { id: 'experience', title: 'Experience', icon: <img src="/icons/briefcase.png" alt="briefcase" className="w-8 h-8 drop-shadow-md" />, component: <Experience /> },
+    { id: 'projects', title: 'My Projects', icon: <img src="/icons/folder.png" alt="folder" className="w-8 h-8 drop-shadow-md" />, component: <ExplorerProjects /> },
+    { id: 'skills', title: 'Tech Stack', icon: <img src="/icons/documents.png" alt="documents" className="w-8 h-8 drop-shadow-md" />, component: <TechStack /> },
+    { id: 'internet', title: 'Internet', icon: <img src="/icons/internet.png" alt="internet" className="w-8 h-8 drop-shadow-md" />, component: <div className="p-4">External Links...</div> },
+    { id: 'contact', title: 'Contact Me', icon: <img src="/icons/email.png" alt="email" className="w-8 h-8 drop-shadow-md" />, component: <Contact /> },
+    { id: 'recycle', title: 'Recycle Bin', icon: <img src="/icons/recycle_bin.png" alt="recycle bin" className="w-8 h-8 drop-shadow-md" />, component: <div className="p-4">Recycle Bin Empty</div> },
 ];
 
 export default function Desktop() {
@@ -28,7 +30,7 @@ export default function Desktop() {
         <div
             className="w-full h-screen overflow-hidden relative select-none font-sans"
             style={{
-                backgroundImage: 'url("https://images.unsplash.com/photo-1506501139174-099022df5260?auto=format&fit=crop&q=80&w=2671")', // Bliss-like wallpaper
+                backgroundImage: 'url("/wallpaper.jpg")',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
             }}
