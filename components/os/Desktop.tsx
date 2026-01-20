@@ -35,18 +35,38 @@ export default function Desktop() {
                 backgroundPosition: 'center',
             }}
         >
-            {/* Desktop Icons Grid */}
+            {/* Desktop Icons Grid (Main Apps) */}
             <div className="absolute top-0 left-0 p-4 m-2 grid grid-flow-col grid-rows-[repeat(auto-fill,100px)] gap-6 z-0">
-                {APPS.map((app) => (
+                {APPS.filter(app => app.id !== 'recycle').map((app) => (
                     <div
                         key={app.id}
                         onDoubleClick={() => openWindow(app.id as AppId)}
                         className="w-[80px] flex flex-col items-center gap-1 group cursor-pointer"
                     >
                         <div className="w-[48px] h-[48px] flex items-center justify-center drop-shadow-2xl transition-transform group-active:scale-95">
-                            {/* Simulated Icon Art */}
                             <div className="w-full h-full bg-contain bg-no-repeat relative">
-                                {/* Placeholder for actual XP icons, using Lucide for now but styled */}
+                                <div className="w-full h-full flex items-center justify-center bg-white/10 rounded-lg border border-white/20 shadow-lg backdrop-blur-sm">
+                                    {app.icon}
+                                </div>
+                            </div>
+                        </div>
+                        <span className="text-white text-xs text-center px-1 py-0.5 rounded-sm drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)] group-hover:bg-[#0055EA]/40">
+                            {app.title}
+                        </span>
+                    </div>
+                ))}
+            </div>
+
+            {/* Recycle Bin (Bottom Right) */}
+            <div className="absolute bottom-12 right-4 p-4 m-2 z-0">
+                {APPS.filter(app => app.id === 'recycle').map((app) => (
+                    <div
+                        key={app.id}
+                        onDoubleClick={() => openWindow(app.id as AppId)}
+                        className="w-[80px] flex flex-col items-center gap-1 group cursor-pointer"
+                    >
+                        <div className="w-[48px] h-[48px] flex items-center justify-center drop-shadow-2xl transition-transform group-active:scale-95">
+                            <div className="w-full h-full bg-contain bg-no-repeat relative">
                                 <div className="w-full h-full flex items-center justify-center bg-white/10 rounded-lg border border-white/20 shadow-lg backdrop-blur-sm">
                                     {app.icon}
                                 </div>

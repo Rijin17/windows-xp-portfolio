@@ -26,59 +26,63 @@ const experiences = [
 
 export default function Experience() {
     return (
-        <section id="experience" className="py-20 bg-black/50">
-            <div className="container mx-auto px-6">
+        <section id="experience" className="h-full bg-[#ECE9D8] overflow-y-auto p-8 font-sans">
+            {/* Document Header */}
+            <div className="max-w-4xl mx-auto mb-10 border-b border-[#A0A0A0] pb-4">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
                 >
-                    <h2 className="text-3xl md:text-5xl font-bold mb-4">Work Experience</h2>
-                    <p className="text-gray-400">My professional journey and career highlights.</p>
+                    <h2 className="text-3xl font-bold text-[#333333] mb-2 flex items-center gap-3">
+                        <Briefcase className="text-[#E68A00]" size={32} />
+                        Work Experience
+                    </h2>
+                    <p className="text-[#555555]">My professional journey and career highlights.</p>
                 </motion.div>
+            </div>
 
-                <div className="max-w-4xl mx-auto relative">
-                    {/* Timeline Line */}
-                    <div className="absolute left-0 md:left-1/2 transform md:-translate-x-px top-0 h-full w-0.5 bg-gradient-to-b from-blue-500/50 to-purple-500/50" />
 
-                    <div className="space-y-12">
-                        {experiences.map((exp, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5 }}
-                                className={`relative flex items-center justify-between md:justify-normal ${index % 2 === 0 ? 'md:flex-row-reverse' : ''
-                                    }`}
-                            >
-                                {/* Dot */}
-                                <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-black border-2 border-blue-500 rounded-full z-10 box-content p-0.5" />
+            <div className="max-w-4xl mx-auto relative">
+                {/* Timeline Line (Classic XP Blue) */}
+                <div className="absolute left-0 md:left-1/2 transform md:-translate-x-px top-0 h-full w-0.5 bg-[#9CB7E3]" />
 
-                                {/* Spacer for desktop layout */}
-                                <div className="hidden md:block w-5/12" />
+                <div className="space-y-12">
+                    {experiences.map((exp, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.3 }}
+                            className={`relative flex items-center justify-between md:justify-normal ${index % 2 === 0 ? 'md:flex-row-reverse' : ''
+                                }`}
+                        >
+                            {/* Dot (XP Style) */}
+                            <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-2 border-[#316AC5] rounded-full z-10 box-content p-0.5 shadow-sm" />
 
-                                {/* Content Card */}
-                                <div className="w-full md:w-5/12 pl-8 md:pl-0">
-                                    <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-colors">
-                                        <div className="flex items-center gap-2 text-blue-400 mb-2 text-sm font-medium">
-                                            <Briefcase size={16} />
-                                            {exp.company}
-                                        </div>
-                                        <h3 className="text-xl font-bold mb-1">{exp.role}</h3>
-                                        <div className="flex items-center gap-2 text-gray-500 text-sm mb-4">
-                                            <Calendar size={14} />
-                                            {exp.period}
-                                        </div>
-                                        <p className="text-gray-400 text-sm leading-relaxed">
-                                            {exp.description}
-                                        </p>
+                            {/* Spacer for desktop layout */}
+                            <div className="hidden md:block w-5/12" />
+
+                            {/* Content Card (Paper Style) */}
+                            <div className="w-full md:w-5/12 pl-8 md:pl-0">
+                                <div className="bg-white border border-[#316AC5] p-5 rounded-sm shadow-[2px_2px_5px_rgba(0,0,0,0.1)] relative group hover:shadow-[3px_3px_8px_rgba(0,0,0,0.15)] transition-shadow">
+                                    {/* Folded corner effect CSS could go here, keeping it simple for now */}
+                                    <div className="flex items-center gap-2 text-[#316AC5] mb-2 text-sm font-bold uppercase tracking-wider">
+                                        {exp.company}
                                     </div>
+                                    <h3 className="text-lg font-bold text-black mb-1">{exp.role}</h3>
+                                    <div className="flex items-center gap-2 text-[#666666] text-xs mb-3 font-medium">
+                                        <Calendar size={12} />
+                                        {exp.period}
+                                    </div>
+                                    <p className="text-[#333333] text-sm leading-relaxed border-t border-[#E0E0E0] pt-3">
+                                        {exp.description}
+                                    </p>
                                 </div>
-                            </motion.div>
-                        ))}
-                    </div>
+                            </div>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
         </section>
