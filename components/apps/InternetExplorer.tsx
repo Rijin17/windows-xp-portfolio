@@ -85,6 +85,11 @@ export default function InternetExplorer() {
                                         </button>
                                     </li>
                                     <li>
+                                        <a href="/resume.pdf" download="Rijin_Stalin_Resume.pdf" className="text-blue-600 underline hover:text-red-500 text-left flex items-center gap-1 font-bold">
+                                            Download Resume (PDF)
+                                        </a>
+                                    </li>
+                                    <li>
                                         <button onClick={() => openApp('projects')} className="text-blue-600 underline hover:text-red-500 text-left flex items-center gap-1">
                                             View Projects
                                         </button>

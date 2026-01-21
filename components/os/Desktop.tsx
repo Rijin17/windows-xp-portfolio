@@ -23,6 +23,7 @@ const APPS = [
     { id: 'internet', title: 'Internet', icon: <img src="/icons/internet.png" alt="internet" className="w-8 h-8 drop-shadow-md" />, component: <InternetExplorer /> },
     { id: 'contact', title: 'Contact Me', icon: <img src="/icons/email.png" alt="email" className="w-8 h-8 drop-shadow-md" />, component: <OutlookExpress /> },
     { id: 'recycle', title: 'Recycle Bin', icon: <img src="/icons/recycle_bin.png" alt="recycle bin" className="w-8 h-8 drop-shadow-md" />, component: <div className="p-4">Recycle Bin Empty</div> },
+    { id: 'resume', title: 'Resume.pdf', icon: <img src="/icons/documents.png" alt="resume" className="w-8 h-8 drop-shadow-md" />, component: <div /> }, // Special case: handled in Desktop double-click
 ];
 
 export default function Desktop() {
@@ -42,7 +43,16 @@ export default function Desktop() {
                 {APPS.filter(app => app.id !== 'recycle').map((app) => (
                     <div
                         key={app.id}
-                        onDoubleClick={() => openWindow(app.id as AppId)}
+                        onDoubleClick={() => {
+                            if (app.id === 'resume') {
+                                const link = document.createElement('a');
+                                link.href = '/resume.pdf';
+                                link.download = 'Rijin_Stalin_Resume.pdf';
+                                link.click();
+                            } else {
+                                openWindow(app.id as AppId);
+                            }
+                        }}
                         className="w-[80px] flex flex-col items-center gap-1 group cursor-pointer"
                     >
                         <div className="w-[48px] h-[48px] flex items-center justify-center drop-shadow-2xl transition-transform group-active:scale-95">
