@@ -7,11 +7,11 @@ import { useOSStore } from '../../store/useOSStore';
 
 export default function InternetExplorer() {
     const [url, setUrl] = useState('www.rijin-stalin.com/portal');
-    const { setWindowOpen, setWindowActive } = useOSStore();
+    const { openWindow, focusWindow } = useOSStore();
 
     const openApp = (appId: string) => {
-        setWindowOpen(appId as any, true);
-        setWindowActive(appId as any);
+        openWindow(appId as any);
+        focusWindow(appId as any);
     };
 
     return (
