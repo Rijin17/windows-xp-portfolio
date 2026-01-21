@@ -7,6 +7,8 @@ import { User, Briefcase, Code2, Mail, Globe, Award } from 'lucide-react';
 import NotepadProfile from '../apps/NotepadProfile';
 import ExplorerProjects from '../apps/ExplorerProjects';
 import Experience from '../Experience';
+import InternetExplorer from '../apps/InternetExplorer';
+import OutlookExpress from '../apps/OutlookExpress';
 import TechStack from '../TechStack';
 import Contact from '../Contact';
 import Certifications from '../Certifications';
@@ -18,8 +20,8 @@ const APPS = [
     { id: 'experience', title: 'Experience', icon: <img src="/icons/briefcase.png" alt="briefcase" className="w-8 h-8 drop-shadow-md" />, component: <Experience /> },
     { id: 'projects', title: 'My Projects', icon: <img src="/icons/folder.png" alt="folder" className="w-8 h-8 drop-shadow-md" />, component: <ExplorerProjects /> },
     { id: 'skills', title: 'Tech Stack', icon: <img src="/icons/documents.png" alt="documents" className="w-8 h-8 drop-shadow-md" />, component: <TechStack /> },
-    { id: 'internet', title: 'Internet', icon: <img src="/icons/internet.png" alt="internet" className="w-8 h-8 drop-shadow-md" />, component: <div className="p-4">External Links...</div> },
-    { id: 'contact', title: 'Contact Me', icon: <img src="/icons/email.png" alt="email" className="w-8 h-8 drop-shadow-md" />, component: <Contact /> },
+    { id: 'internet', title: 'Internet', icon: <img src="/icons/internet.png" alt="internet" className="w-8 h-8 drop-shadow-md" />, component: <InternetExplorer /> },
+    { id: 'contact', title: 'Contact Me', icon: <img src="/icons/email.png" alt="email" className="w-8 h-8 drop-shadow-md" />, component: <OutlookExpress /> },
     { id: 'recycle', title: 'Recycle Bin', icon: <img src="/icons/recycle_bin.png" alt="recycle bin" className="w-8 h-8 drop-shadow-md" />, component: <div className="p-4">Recycle Bin Empty</div> },
 ];
 
@@ -58,7 +60,7 @@ export default function Desktop() {
             </div>
 
             {/* Recycle Bin (Bottom Right) */}
-            <div className="absolute bottom-12 right-4 p-4 m-2 z-0">
+            <div className="absolute bottom-[50px] right-4 p-4 m-2 z-0">
                 {APPS.filter(app => app.id === 'recycle').map((app) => (
                     <div
                         key={app.id}

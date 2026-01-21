@@ -26,7 +26,7 @@ const experiences = [
 
 export default function Experience() {
     return (
-        <section id="experience" className="h-full bg-[#ECE9D8] overflow-y-auto p-8 font-sans">
+        <section id="experience" className="h-full bg-[#ECE9D8] overflow-y-auto p-8 font-[Tahoma,Verdana,sans-serif]">
             {/* Document Header */}
             <div className="max-w-4xl mx-auto mb-10 border-b border-[#A0A0A0] pb-4">
                 <motion.div
@@ -34,11 +34,11 @@ export default function Experience() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
-                    <h2 className="text-3xl font-bold text-[#333333] mb-2 flex items-center gap-3">
+                    <h2 className="text-3xl font-bold text-black mb-2 flex items-center gap-3">
                         <Briefcase className="text-[#E68A00]" size={32} />
                         Work Experience
                     </h2>
-                    <p className="text-[#555555]">My professional journey and career highlights.</p>
+                    <p className="text-[#222222]">My professional journey and career highlights.</p>
                 </motion.div>
             </div>
 
@@ -66,17 +66,17 @@ export default function Experience() {
 
                             {/* Content Card (Paper Style) */}
                             <div className="w-full md:w-5/12 pl-8 md:pl-0">
-                                <div className="bg-white border border-[#316AC5] p-5 rounded-sm shadow-[2px_2px_5px_rgba(0,0,0,0.1)] relative group hover:shadow-[3px_3px_8px_rgba(0,0,0,0.15)] transition-shadow">
+                                <div className="bg-white border-2 border-[#316AC5] p-6 rounded-sm shadow-[4px_4px_0_rgba(0,0,0,0.1)] relative group hover:shadow-[6px_6px_0_rgba(0,0,0,0.15)] transition-shadow">
                                     {/* Folded corner effect CSS could go here, keeping it simple for now */}
                                     <div className="flex items-center gap-2 text-[#316AC5] mb-2 text-sm font-bold uppercase tracking-wider">
                                         {exp.company}
                                     </div>
-                                    <h3 className="text-lg font-bold text-black mb-1">{exp.role}</h3>
-                                    <div className="flex items-center gap-2 text-[#666666] text-xs mb-3 font-medium">
-                                        <Calendar size={12} />
+                                    <h3 className="text-xl font-bold text-black mb-1">{exp.role}</h3>
+                                    <div className="flex items-center gap-2 text-[#444444] text-sm mb-4 font-medium">
+                                        <Calendar size={14} />
                                         {exp.period}
                                     </div>
-                                    <p className="text-[#333333] text-sm leading-relaxed border-t border-[#E0E0E0] pt-3">
+                                    <p className="text-black text-base leading-relaxed border-t border-[#E0E0E0] pt-3">
                                         {exp.description}
                                     </p>
                                 </div>

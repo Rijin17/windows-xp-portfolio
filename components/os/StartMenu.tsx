@@ -44,15 +44,15 @@ export default function StartMenu() {
                         {/* Left Column (Apps) */}
                         <div className="flex-1 bg-white p-1 flex flex-col gap-1">
                             <div className="flex flex-col gap-1 pb-2 border-b border-gray-300">
-                                <MenuLink icon={<Globe className="text-[#2B60DE]" />} title="Internet" subtitle="Internet Explorer" onClick={() => handleAppClick('internet')} bold />
-                                <MenuLink icon={<Mail className="text-[#2B60DE]" />} title="E-mail" subtitle="Outlook Express" onClick={() => handleAppClick('contact')} bold />
+                                <MenuLink icon={<img src="/icons/internet.png" alt="Internet" className="w-8 h-8" />} title="Internet" subtitle="Internet Explorer" onClick={() => handleAppClick('internet')} bold />
+                                <MenuLink icon={<img src="/icons/email.png" alt="Email" className="w-8 h-8" />} title="E-mail" subtitle="Outlook Express" onClick={() => handleAppClick('contact')} bold />
                             </div>
 
                             <div className="flex flex-col gap-1 pt-1 flex-1">
-                                <MenuLink icon={<User className="text-gray-600" />} title="My Profile" onClick={() => handleAppClick('profile')} />
-                                <MenuLink icon={<Briefcase className="text-gray-600" />} title="Work Experience" onClick={() => handleAppClick('experience')} />
-                                <MenuLink icon={<Code2 className="text-gray-600" />} title="My Projects" onClick={() => handleAppClick('projects')} />
-                                <MenuLink icon={<Award className="text-gray-600" />} title="Tech Stack" onClick={() => handleAppClick('skills')} />
+                                <MenuLink icon={<img src="/icons/computer.png" alt="Profile" className="w-8 h-8" />} title="My Profile" onClick={() => handleAppClick('profile')} />
+                                <MenuLink icon={<img src="/icons/briefcase.png" alt="Experience" className="w-8 h-8" />} title="Work Experience" onClick={() => handleAppClick('experience')} />
+                                <MenuLink icon={<img src="/icons/folder.png" alt="Projects" className="w-8 h-8" />} title="My Projects" onClick={() => handleAppClick('projects')} />
+                                <MenuLink icon={<img src="/icons/documents.png" alt="Skills" className="w-8 h-8" />} title="Tech Stack" onClick={() => handleAppClick('skills')} />
                             </div>
 
                             <div className="h-8 flex items-center justify-center gap-1 border-t border-gray-300 hover:bg-[#2F71CD] hover:text-white cursor-pointer mt-auto">
