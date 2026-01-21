@@ -92,7 +92,7 @@ export default function Desktop() {
             </div>
 
             {/* Windows Layer */}
-            {APPS.map((app, index) => (
+            {APPS.filter(app => app.id !== 'resume').map((app, index) => (
                 <WindowFrame
                     key={app.id}
                     id={app.id as AppId}
